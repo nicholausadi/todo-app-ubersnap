@@ -13,10 +13,23 @@ struct PersistenceController {
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
-        for _ in 0..<20 {
+        for i in 0..<5 {
             let newItem = TodoItem(context: viewContext)
             newItem.createdDate = Date()
-            newItem.name = "Test"
+            newItem.title = "Title \(i)"
+        }
+        for i in 0..<5 {
+            let newItem = TodoItem(context: viewContext)
+            newItem.createdDate = Date()
+            newItem.title = "Title \(i+5)"
+            newItem.desc = "Description task lorem ipsum dolor sit amet"
+        }
+        for i in 0..<5 {
+            let newItem = TodoItem(context: viewContext)
+            newItem.createdDate = Date()
+            newItem.title = "Title \(i+10)"
+            newItem.desc = "Description task lorem ipsum dolor sit amet"
+            newItem.dueDate = Calendar.current.date(byAdding: .month, value: Int.random(in: 0..<12), to: Date())
         }
         do {
             try viewContext.save()

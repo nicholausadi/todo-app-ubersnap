@@ -12,11 +12,20 @@ struct TodoItemView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text(item.name ?? "")
-            Text(item.createdDate ?? Date(),
-                 formatter: dateFormatter)
-            .foregroundStyle(.gray)
-            .font(.system(size: 12))
+            Text(item.title ?? "")
+            
+            if let desc = item.desc {
+                Text(desc)
+                    .foregroundStyle(.gray)
+                    .font(.system(size: 12))
+            }
+            
+            if let dueDate = item.dueDate {
+                let dateStr = dateFormatter.string(from: dueDate)
+                Text("Due at \(dateStr)")
+                    .foregroundStyle(.gray)
+                    .font(.system(size: 12))
+            }
         }
     }
 }
