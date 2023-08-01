@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6323F3602A7957F6001B0362 /* TodoItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6323F35F2A7957F6001B0362 /* TodoItemView.swift */; };
+		6323F3622A7959E9001B0362 /* UpsertTodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6323F3612A7959E9001B0362 /* UpsertTodoView.swift */; };
 		63D3AE2D2A7946F100C99170 /* TodoListUbersnapApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D3AE2C2A7946F100C99170 /* TodoListUbersnapApp.swift */; };
-		63D3AE2F2A7946F100C99170 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D3AE2E2A7946F100C99170 /* ContentView.swift */; };
+		63D3AE2F2A7946F100C99170 /* TodoHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D3AE2E2A7946F100C99170 /* TodoHomeView.swift */; };
 		63D3AE312A7946F300C99170 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63D3AE302A7946F300C99170 /* Assets.xcassets */; };
 		63D3AE342A7946F300C99170 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63D3AE332A7946F300C99170 /* Preview Assets.xcassets */; };
 		63D3AE362A7946F300C99170 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D3AE352A7946F300C99170 /* Persistence.swift */; };
@@ -36,9 +38,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6323F35F2A7957F6001B0362 /* TodoItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItemView.swift; sourceTree = "<group>"; };
+		6323F3612A7959E9001B0362 /* UpsertTodoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpsertTodoView.swift; sourceTree = "<group>"; };
 		63D3AE292A7946F100C99170 /* TodoListUbersnap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoListUbersnap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63D3AE2C2A7946F100C99170 /* TodoListUbersnapApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListUbersnapApp.swift; sourceTree = "<group>"; };
-		63D3AE2E2A7946F100C99170 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		63D3AE2E2A7946F100C99170 /* TodoHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoHomeView.swift; sourceTree = "<group>"; };
 		63D3AE302A7946F300C99170 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63D3AE332A7946F300C99170 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		63D3AE352A7946F300C99170 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -99,7 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				63D3AE2C2A7946F100C99170 /* TodoListUbersnapApp.swift */,
-				63D3AE2E2A7946F100C99170 /* ContentView.swift */,
+				63D3AE5D2A7950BA00C99170 /* View */,
 				63D3AE302A7946F300C99170 /* Assets.xcassets */,
 				63D3AE352A7946F300C99170 /* Persistence.swift */,
 				63D3AE372A7946F300C99170 /* TodoListUbersnap.xcdatamodeld */,
@@ -131,6 +135,16 @@
 				63D3AE4E2A7946F300C99170 /* TodoListUbersnapUITestsLaunchTests.swift */,
 			);
 			path = TodoListUbersnapUITests;
+			sourceTree = "<group>";
+		};
+		63D3AE5D2A7950BA00C99170 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				63D3AE2E2A7946F100C99170 /* TodoHomeView.swift */,
+				6323F35F2A7957F6001B0362 /* TodoItemView.swift */,
+				6323F3612A7959E9001B0362 /* UpsertTodoView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,10 +277,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6323F3622A7959E9001B0362 /* UpsertTodoView.swift in Sources */,
 				63D3AE362A7946F300C99170 /* Persistence.swift in Sources */,
-				63D3AE2F2A7946F100C99170 /* ContentView.swift in Sources */,
+				63D3AE2F2A7946F100C99170 /* TodoHomeView.swift in Sources */,
 				63D3AE2D2A7946F100C99170 /* TodoListUbersnapApp.swift in Sources */,
 				63D3AE392A7946F300C99170 /* TodoListUbersnap.xcdatamodeld in Sources */,
+				6323F3602A7957F6001B0362 /* TodoItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

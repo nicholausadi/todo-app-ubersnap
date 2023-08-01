@@ -13,7 +13,7 @@ struct TodoListUbersnapApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TodoHomeView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
