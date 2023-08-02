@@ -23,7 +23,7 @@ struct TodoUpsertView: View {
     var todoId: NSManagedObjectID?
     
     // View Model
-    let viewModel = TodoViewModel()
+    @StateObject var viewModel = TodoViewModel()
     
     // Error State
     @State private var titleError = false
@@ -76,6 +76,7 @@ struct TodoUpsertView: View {
                 .foregroundColor(.white)
                 .background(.blue)
             }
+            .errorAlert(error: $viewModel.errorMsg)
             .navigationTitle("\(todoId == nil ? "New Task" : "Edit Task")")
             
             Spacer()

@@ -8,7 +8,9 @@
 import CoreData
 import SwiftUI
 
-struct TodoViewModel {
+final class TodoViewModel: ObservableObject {
+    
+    @Published var errorMsg: Error?
     
     func getTodo(for objectId: NSManagedObjectID, context: NSManagedObjectContext) -> TodoItem? {
         guard let item = context.object(with: objectId) as? TodoItem else {
@@ -39,10 +41,10 @@ struct TodoViewModel {
             try context.save()
         } catch {
             context.rollback()
-            
-            // TODO: Add pop up error handling.
+
+            // Show pop up error handling.
             let nsError = error as NSError
-            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+            errorMsg = Error.failedUpsert(error: nsError)
         }
     }
     
@@ -52,16 +54,15 @@ struct TodoViewModel {
         context: NSManagedObjectContext
     ) {
         indexSet.map { items[$0] }.forEach(context.delete)
-
+        
         do {
             try context.save()
         } catch {
             context.rollback()
-            
-            // TODO: Add pop up error handling.
+
+            // Show pop up error handling.
             let nsError = error as NSError
-            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+            errorMsg = Error.failedDelete(error: nsError)
         }
     }
-    
 }

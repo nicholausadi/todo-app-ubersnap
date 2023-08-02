@@ -21,6 +21,9 @@
 		63E19F022A7977C600F1F0EE /* TodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E19F012A7977C600F1F0EE /* TodoViewModel.swift */; };
 		63E19F052A7978F200F1F0EE /* TodoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E19F042A7978F200F1F0EE /* TodoModel.swift */; };
 		FAFA3B752A7A15AD005715DE /* DatePickerField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFA3B742A7A15AD005715DE /* DatePickerField.swift */; };
+		FAFA3B782A7A259E005715DE /* Extension+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFA3B772A7A259E005715DE /* Extension+View.swift */; };
+		FAFA3B7B2A7A260E005715DE /* LocalizedAlertError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFA3B7A2A7A260E005715DE /* LocalizedAlertError.swift */; };
+		FAFA3B7D2A7A2717005715DE /* EnumError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFA3B7C2A7A2717005715DE /* EnumError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +61,9 @@
 		63E19F012A7977C600F1F0EE /* TodoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewModel.swift; sourceTree = "<group>"; };
 		63E19F042A7978F200F1F0EE /* TodoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoModel.swift; sourceTree = "<group>"; };
 		FAFA3B742A7A15AD005715DE /* DatePickerField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerField.swift; sourceTree = "<group>"; };
+		FAFA3B772A7A259E005715DE /* Extension+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+View.swift"; sourceTree = "<group>"; };
+		FAFA3B7A2A7A260E005715DE /* LocalizedAlertError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedAlertError.swift; sourceTree = "<group>"; };
+		FAFA3B7C2A7A2717005715DE /* EnumError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +117,8 @@
 				63D3AE5D2A7950BA00C99170 /* Views */,
 				63E19F032A7978DF00F1F0EE /* Model */,
 				63E19F002A79777900F1F0EE /* ViewModels */,
+				FAFA3B762A7A257C005715DE /* Extension */,
+				FAFA3B792A7A2607005715DE /* Error */,
 				63D3AE2C2A7946F100C99170 /* TodoListUbersnapApp.swift */,
 				63D3AE352A7946F300C99170 /* Persistence.swift */,
 				63D3AE302A7946F300C99170 /* Assets.xcassets */,
@@ -170,6 +178,23 @@
 				63E19F042A7978F200F1F0EE /* TodoModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		FAFA3B762A7A257C005715DE /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				FAFA3B772A7A259E005715DE /* Extension+View.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		FAFA3B792A7A2607005715DE /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				FAFA3B7A2A7A260E005715DE /* LocalizedAlertError.swift */,
+				FAFA3B7C2A7A2717005715DE /* EnumError.swift */,
+			);
+			path = Error;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,11 +329,14 @@
 			files = (
 				6323F3622A7959E9001B0362 /* TodoUpsertView.swift in Sources */,
 				63E19F052A7978F200F1F0EE /* TodoModel.swift in Sources */,
+				FAFA3B782A7A259E005715DE /* Extension+View.swift in Sources */,
 				63D3AE362A7946F300C99170 /* Persistence.swift in Sources */,
 				63D3AE2F2A7946F100C99170 /* TodoHomeView.swift in Sources */,
+				FAFA3B7B2A7A260E005715DE /* LocalizedAlertError.swift in Sources */,
 				63D3AE2D2A7946F100C99170 /* TodoListUbersnapApp.swift in Sources */,
 				63D3AE392A7946F300C99170 /* TodoListUbersnap.xcdatamodeld in Sources */,
 				FAFA3B752A7A15AD005715DE /* DatePickerField.swift in Sources */,
+				FAFA3B7D2A7A2717005715DE /* EnumError.swift in Sources */,
 				63E19F022A7977C600F1F0EE /* TodoViewModel.swift in Sources */,
 				6323F3602A7957F6001B0362 /* TodoItemView.swift in Sources */,
 			);
