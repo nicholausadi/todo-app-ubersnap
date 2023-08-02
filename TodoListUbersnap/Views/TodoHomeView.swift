@@ -21,7 +21,7 @@ struct TodoHomeView: View {
     @State private var refreshID = UUID()
     
     // View Model
-    let viewModel = TodoViewModel()
+    @StateObject var viewModel = TodoViewModel()
 
     var body: some View {
         NavigationView {
@@ -55,6 +55,7 @@ struct TodoHomeView: View {
                     }
                 }
             }.navigationTitle("To Do List")
+            .errorAlert(error: $viewModel.errorMsg)
         }
     }
 }
