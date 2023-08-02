@@ -16,39 +16,45 @@ struct TodoHomeView: View {
                   animation: .default)
     
     private var items: FetchedResults<TodoItem>
+    
+    // State
+    @State private var refreshID = UUID()
+    
+    // View Model
+    let viewModel = TodoViewModel()
 
     var body: some View {
         NavigationView {
             List {
                 ForEach(items) { item in
-                    NavigationLink(destination: UpsertTodoView()) {
+                    NavigationLink {
+                        TodoUpsertView(todoId: item.objectID)
+                            .onDisappear {
+                                self.refreshID = UUID()
+                        }
+                    } label: {
                         TodoItemView(item: item)
                     }
                 }
-                .onDelete(perform: deleteItems)
-            }
-            .toolbar {
-                ToolbarItem {
-                    NavigationLink(destination: UpsertTodoView()) {
-                        Label("Add Item", systemImage: "plus")
+                .onDelete { indexSet in
+                    withAnimation {
+                        viewModel.deleteItem(
+                            for: indexSet,
+                            items: items,
+                            context: viewContext)
                     }
                 }
             }
-            .navigationTitle("To Do List")
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            offsets.map { items[$0] }.forEach(viewContext.delete)
-
-            do {
-                try viewContext.save()
-            } catch {
-                // TODO: Add pop up error handling.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
+            .id(refreshID)
+            .toolbar {
+                ToolbarItem {
+                    NavigationLink {
+                        TodoUpsertView()
+                    } label: {
+                        Label("Add Item", systemImage: "plus")
+                    }
+                }
+            }.navigationTitle("To Do List")
         }
     }
 }

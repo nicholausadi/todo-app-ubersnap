@@ -14,7 +14,7 @@ struct TodoItemView: View {
         VStack(alignment: .leading) {
             Text(item.title ?? "")
             
-            if let desc = item.desc {
+            if let desc = item.desc, !desc.isEmpty {
                 Text(desc)
                     .foregroundStyle(.gray)
                     .font(.system(size: 12))
@@ -22,7 +22,7 @@ struct TodoItemView: View {
             
             if let dueDate = item.dueDate {
                 let dateStr = dateFormatter.string(from: dueDate)
-                Text("Due at \(dateStr)")
+                Text("Due on \(dateStr)")
                     .foregroundStyle(.gray)
                     .font(.system(size: 12))
             }
